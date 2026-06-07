@@ -1,0 +1,251 @@
+/* ==========================================================================
+   ARCHIVO : css.css
+   PROYECTO: Salud con Nutrición - Directorio Gerencial
+   PROTOCOLO: AMIGOS WEB 2026 - LUMINOSO V5.1 (MAGIA DINÁMICA & RIGOR)
+   AUTOR: JuanDaniel Blázquez Antón (Dentrix)
+   ========================================================================== */
+
+:root {
+    /* Paleta de Identidad Profesional */
+    --bg-main: #fcfdfe;
+    --panel-bg: #ffffff;
+    --accent-core: #5dade2;
+    --accent-hover: #3498db;
+    --azul-profesional: #455a64;
+    --text-prime: #2c3e50;
+    --text-meta: #7f8c8d;
+    --border-ui: #e2e8f0;
+    
+    /* Sistema de Sombras para Profundidad */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
+    --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px -2px rgba(0,0,0,0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1);
+    
+    /* Dinámicas de Movimiento */
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 1. ESTADO BASE Y CUERPO */
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--bg-main);
+    color: var(--text-prime);
+    margin: 0;
+    line-height: 1.7;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 2. ESTRUCTURA DE CABECERA GERENCIAL */
+.main-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    color: var(--azul-profesional);
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 6px solid var(--accent-core);
+    box-shadow: var(--shadow-sm);
+}
+
+.main-header h1 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: var(--azul-profesional);
+}
+
+.header-meta {
+    font-size: 0.9rem;
+    color: var(--accent-core);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* 3. NAVEGACIÓN TÉCNICA (LOS 19 MARCADORES) */
+.category-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.category-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-ui);
+    padding: 20px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-prime);
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.cat-id {
+    color: var(--accent-core);
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.category-card:hover {
+    border-color: var(--accent-core);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    color: var(--accent-hover);
+}
+
+/* 4. SECCIONES Y FICHAS DE ACTIVOS */
+.categoria-seccion {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ficha-web {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-ui);
+    padding: 30px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.ficha-web::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: var(--accent-core);
+    opacity: 0; transition: 0.3s;
+}
+
+.ficha-web:hover::before { opacity: 1; }
+
+.ficha-web:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-core);
+}
+
+/* 5. PROTOCOLO EMOJI DINÁMICO */
+.friend-presentation-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #f0f7ff;
+    border-radius: 50px;
+    color: var(--accent-hover);
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.emoji-animado {
+    font-size: 1.4rem;
+    margin-right: 10px;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.friend-presentation-link:hover { background: var(--accent-core); color: white; }
+.friend-presentation-link:hover .emoji-animado { transform: scale(1.4) rotate(-10deg); }
+
+/* 6. LEYENDA TÉCNICA EMOJI-LEGEND */
+.emoji-legend {
+    background: #f8fafc;
+    border: 1px solid var(--border-ui);
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.e-tip {
+    font-size: 1.6rem;
+    padding: 10px;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.e-tip:hover { transform: scale(1.5) translateY(-5px); }
+
+/* 7. BUSCADOR (CAPTADOR) */
+.search-container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+#webSearch {
+    width: 100%; padding: 18px 30px; border-radius: 100px;
+    border: 2px solid var(--border-ui); font-size: 1.1rem;
+    transition: var(--transition); background: var(--panel-bg);
+    box-shadow: var(--shadow-md); outline: none;
+}
+
+#webSearch:focus { border-color: var(--accent-core); box-shadow: 0 0 0 4px rgba(93, 173, 226, 0.2); }
+
+/* 8. RECURSOS DE APIS (GOOGLE & AZURE) */
+.safety-shield { font-size: 1.2rem; cursor: pointer; }
+.shield-verified { color: #2ecc71; filter: drop-shadow(0 0 5px rgba(46, 204, 113, 0.4)); }
+.shield-checking { animation: pulse 1.5s infinite; }
+
+@keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+
+.tag-pill {
+    background: #eef2f7; color: var(--azul-profesional);
+    padding: 5px 12px; border-radius: 6px; font-size: 0.75rem;
+    font-weight: 800; border: 1px solid var(--border-ui);
+}
+
+/* 9. MODO NOCHE REFORZADO */
+body.dark-mode {
+    --bg-main: #0f172a;
+    --panel-bg: #1e293b;
+    --text-prime: #f1f5f9;
+    --text-meta: #94a3b8;
+    --border-ui: #334155;
+    --azul-profesional: #38bdf8;
+}
+
+.dark-toggle {
+    position: fixed; bottom: 30px; right: 30px;
+    background: var(--accent-core); color: white;
+    border: none; border-radius: 50%; width: 60px; height: 60px;
+    cursor: pointer; box-shadow: var(--shadow-lg); z-index: 9999;
+    font-size: 1.6rem;
+}
+
+/* 10. ADAPTABILIDAD (MOBILE) */
+@media (max-width: 768px) {
+    .category-menu { grid-template-columns: 1fr; padding: 20px; }
+    .main-header h1 { font-size: 2rem; }
+    .main-header { padding: 60px 15px; }
+    .ficha-web { padding: 20px; }
+}
+
+/* Secuencia de Ojos y Guiño mediante Pseudo-elemento */
+.friend-presentation-link:hover .emoji-animado::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "😊";
+    animation: secuenciaEmoji 2.5s steps(1) infinite;
+}
+
+@keyframes secuenciaEmoji {
+    0%   { content: "😊"; } 
+    20%  { content: "😮"; } 
+    40%  { content: "😌"; } 
+    60%  { content: "😉"; } 
+    80%  { content: "😊"; }
+}

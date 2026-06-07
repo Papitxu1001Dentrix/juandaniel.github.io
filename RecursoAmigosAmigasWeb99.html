@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Web – Dentrix PRO v3.0 | Panel Integral</title>
+    <style>
+        :root { 
+            --primary: #0056b3; 
+            --accent: #33ff33; 
+            --bg-dark: #1e1e1e; 
+            --bg-light: #f4f7f9;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg-light); margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: auto; }
+        
+        .company-card { 
+            background: white; padding: 20px; border-radius: 10px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px;
+        }
+
+        h1 { color: var(--primary); border-bottom: 3px solid var(--primary); padding-bottom: 10px; }
+        
+        .url-bar {
+            display: flex; gap: 10px; margin-bottom: 15px;
+        }
+        input[type="text"] { 
+            flex-grow: 1; padding: 15px; border: 2px solid var(--primary); 
+            border-radius: 5px; font-size: 1.1em;
+        }
+
+        .audit-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 15px; margin-top: 15px; 
+        }
+        
+        .audit-item { 
+            border: 1px solid #e0e0e0; padding: 15px; border-radius: 8px; 
+            background: #fff; display: flex; flex-direction: column; 
+            justify-content: space-between; transition: all 0.2s;
+        }
+        .audit-item:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: var(--primary); }
+        
+        .audit-item h4 { margin: 0 0 8px 0; color: var(--primary); font-size: 0.95em; text-transform: uppercase; }
+        .audit-item p { font-size: 0.8em; color: #555; margin-bottom: 15px; line-height: 1.3; flex-grow: 1; }
+        
+        button { 
+            padding: 10px; cursor: pointer; border-radius: 4px; 
+            border: 1px solid var(--primary); background: #fff; color: var(--primary); 
+            font-weight: bold; font-size: 0.85em; transition: 0.3s;
+        }
+        button:hover { background: var(--primary); color: #fff; }
+        
+        .btn-ia { background: var(--primary); color: white; padding: 12px 20px; }
+
+        #output { 
+            background: var(--bg-dark); color: var(--accent); padding: 15px; 
+            border-radius: 5px; font-family: 'Consolas', monospace; font-size: 0.9em; 
+            min-height: 80px; overflow-x: auto; border-left: 5px solid var(--primary); margin-top: 10px;
+        }
+
+        .section-title { 
+            background: var(--primary); color: white; padding: 12px 20px; 
+            margin-top: 40px; border-radius: 5px; font-size: 1.3em; display: flex; align-items: center; justify-content: space-between;
+        }
+        .dimension-desc { font-style: italic; color: #666; margin: 10px 0 20px 5px; display: block; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🌐 Amigo Web – Dentrix PRO v3.0</h1>
+    
+    <div class="company-card">
+        <p><strong>📂 Panel de Auditoría Integral:</strong> Análisis automatizado de 51 puntos de control para la verificación de valores, ética y rigor técnico.</p>
+        <div class="url-bar">
+            <input type="text" id="urlInput" placeholder="https://www.ejemplo.com" value="">
+        </div>
+    </div>
+
+    <!-- BLOQUE IA CORE -->
+    <div class="company-card">
+        <h2>🧠 Inteligencia Artificial Dentrix (Backend)</h2>
+        <button class="btn-ia" onclick="runGoogle()">📊 Ejecutar Google PageSpeed API</button>
+        <button class="btn-ia" onclick="runAzure()">🔷 Ejecutar Azure Sentiment AI</button>
+        <pre id="output">Consola: Esperando parámetros para iniciar el diagnóstico profundo...</pre>
+    </div>
+
+    <!-- DIMENSIÓN 1 -->
+    <h2 class="section-title">🔬 Dimensión 1: Rigor Científico y Académico</h2>
+    <span class="dimension-desc">Veracidad de datos, impacto de investigación y contrastación de evidencias globales.</span>
+    <div class="audit-grid" id="grid-d1"></div>
+
+    <!-- DIMENSIÓN 2 -->
+    <h2 class="section-title">🛡️ Dimensión 2: Ética Digital y Privacidad</h2>
+    <span class="dimension-desc">Respeto a la identidad del usuario, vigilancia técnica y transparencia algorítmica.</span>
+    <div class="audit-grid" id="grid-d2"></div>
+
+    <!-- DIMENSIÓN 3 -->
+    <h2 class="section-title">🌍 Dimensión 3: Sostenibilidad y Responsabilidad Global</h2>
+    <span class="dimension-desc">Impacto ambiental, propósito social, transparencia corporativa y certificaciones de valor.</span>
+    <div class="audit-grid" id="grid-d3"></div>
+
+    <!-- DIMENSIÓN 4 -->
+    <h2 class="section-title">⚡ Dimensión 4: Calidad Técnica, Estándares y UX</h2>
+    <span class="dimension-desc">Rendimiento, accesibilidad universal, robustez de infraestructura y cumplimiento de estándares W3C.</span>
+    <div class="audit-grid" id="grid-d4"></div>
+
+    <!-- DIMENSIÓN 5 -->
+    <h2 class="section-title">🏛️ Dimensión 5: Reputación, Autoridad y Contexto</h2>
+    <span class="dimension-desc">Prestigio internacional, historia institucional y relevancia en el grafo de confianza web.</span>
+    <div class="audit-grid" id="grid-d5"></div>
+</div>
+
+<script>
+    /* LÓGICA DE CAPTACIÓN DE URL */
+    function getURL() { 
+        let url = document.getElementById("urlInput").value.trim();
+        if (!url.startsWith('http')) url = 'https://' + url;
+        return url;
+    }
+    function getDomain() { 
+        return getURL().replace(/https?:\/\//, "").split('/')[0].replace('www.', ''); 
+    }
+
+    /* SISTEMA AUTOMATIZADO DE GENERACIÓN DE BOTONES */
+    const recursos = [
+        // DIMENSIÓN 1
+        { d: 1, n: "Consensus AI", p: "Buscador de evidencia científica para contrastar afirmaciones.", b: "Rigor Científico", u: "https://consensus.app/search/?q=" },
+        { d: 1, n: "Cochrane Library", p: "Metadatos de salud y medicina basada en la evidencia.", b: "Evidencia Médica", u: "https://www.cochranelibrary.com/search?searchText=" },
+        { d: 1, n: "Dimensions.ai", p: "Citas e impacto de investigación institucional global.", b: "Impacto Académico", u: "https://app.dimensions.ai/discover/publication?search_text=" },
+        { d: 1, n: "Scimago / SJR", p: "Prestigio y ranking de publicaciones científicas vinculadas.", b: "Ranking Diario", u: "https://www.scimagojr.com/journalsearch.php?q=" },
+        { d: 1, n: "Retraction Watch", p: "Integridad: Base de datos de estudios científicos retirados.", b: "Ver Integridad", u: "https://retractionwatch.com/?s=" },
+        { d: 1, n: "PubPeer", p: "Revisión por pares y comentarios de la comunidad científica.", b: "Revisión Pares", u: "https://pubpeer.com/search?q=" },
+        { d: 1, n: "Altmetric", p: "Atención mediática y social de los trabajos científicos.", b: "Impacto Social", u: "https://www.altmetric.com/explorer/outputs?search=" },
+        { d: 1, n: "ERIC", p: "Calidad de recursos e investigación en el ámbito educativo.", b: "Recursos Educativos", u: "https://eric.ed.gov/?q=" },
+        { d: 1, n: "WikiData", p: "Identificador de entidad en la base de conocimiento global.", b: "Ver Entidad", u: "https://www.wikidata.org/w/index.php?search=" },
+
+        // DIMENSIÓN 2
+        { d: 2, n: "Mozilla Observatory", p: "Auditoría de seguridad técnica y ética de protección de datos.", b: "Seguridad Ética", u: "https://observatory.mozilla.org/analyze/" },
+        { d: 2, n: "Blacklight Scan", p: "Inspección de rastreadores y vigilancia en tiempo real.", b: "Escanear Privacidad", u: "https://themarkup.org/blacklight?url=" },
+        { d: 2, n: "AlgorithmWatch", p: "Auditoría de sesgos y procesos automatizados (IA).", b: "Auditar Sesgo", u: "https://algorithmwatch.org/en/?s=" },
+        { d: 2, n: "DFRLab", p: "Identificación de desinformación y manipulación mediática.", b: "Veracidad Media", u: "https://www.atlanticcouncil.org/search-results/?q=" },
+        { d: 2, n: "Ranking Digital Rights", p: "Políticas de libertad de expresión y privacidad corporativa.", b: "Derechos Digitales", u: "https://rankingdigitalrights.org/?s=" },
+        { d: 2, n: "ToS;DR", p: "Justicia y transparencia en términos y condiciones legales.", b: "Valorar Contrato", u: "https://tosdr.org/en/service/" },
+        { d: 2, n: "Who Tracks Me", p: "Estadísticas sobre el alcance de rastreadores publicitarios.", b: "Ver Vigilancia", u: "https://whotracks.me/websites/" },
+        { d: 2, n: "The Markup", p: "Inspección de filtración de datos hacia grandes tecnológicas.", b: "Ver Filtraciones", u: "https://themarkup.org/series/inspect-element" },
+        { d: 2, n: "Google Trust", p: "Estado de seguridad de navegación y sitios peligrosos.", b: "Seguridad Google", u: "https://transparencyreport.google.com/safe-browsing/search?url=" },
+
+        // DIMENSIÓN 3
+        { d: 3, n: "Carbon Tool", p: "Mide la huella de carbono y sostenibilidad del sitio web.", b: "Huella Ecológica", u: "https://www.websitecarbon.com/website/" },
+        { d: 3, n: "Ecograder", p: "Puntuación de eficiencia energética y emisiones de CO2.", b: "Grado Ecológico", u: "https://ecograder.com/report?url=" },
+        { d: 3, n: "Green Web Foundation", p: "Verifica si el hosting utiliza energías renovables.", b: "Check Energía", u: "https://www.thegreenwebfoundation.org/admin/green-web-check/?url=" },
+        { d: 3, n: "B-Corp Directory", p: "Certificación de impacto social y ambiental positivo.", b: "Certificación B", u: "https://www.bcorporation.net/en-us/find-a-b-corp/?query=" },
+        { d: 3, n: "OpenCorporates", p: "Base de datos abierta para verificar estructura legal corporativa.", b: "Estructura Legal", u: "https://opencorporates.com/companies?q=" },
+        { d: 3, n: "Global Reporting (GRI)", p: "Buscador de informes de sostenibilidad y responsabilidad social.", b: "Informes GRI", u: "https://www.globalreporting.org/search/?query=" },
+        { d: 3, n: "Better Business Bureau", p: "Reputación comercial y ética en el trato con el público.", b: "Reputación BBB", u: "https://www.bbb.org/search?find_text=" },
+        { d: 3, n: "Glassdoor", p: "Valoración de empleados y ética laboral interna de la entidad.", b: "Ética Laboral", u: "https://www.glassdoor.com/Reviews/index.htm?query=" },
+        { d: 3, n: "D&B Directory", p: "Solvencia, trayectoria y perfil financiero de la organización.", b: "Solvencia D&B", u: "https://www.dnb.com/business-directory.html?query=" },
+
+        // DIMENSIÓN 4
+        { d: 4, n: "W3C Validator", p: "Verificación oficial de sintaxis HTML y estándares web.", b: "Validar HTML", u: "https://validator.w3.org/nu/?doc=" },
+        { d: 4, n: "Schema Validator", p: "Prueba de datos estructurados para buscadores y semántica.", b: "Validar Schema", u: "https://validator.schema.org/#url=" },
+        { d: 4, n: "WAVE Accessibility", p: "Evaluación de inclusión y accesibilidad para discapacidad.", b: "Evaluar Inclusión", u: "https://wave.webaim.org/report#/" },
+        { d: 4, n: "GTmetrix", p: "Análisis de rendimiento, velocidad y optimización de carga.", b: "Test de Carga", u: "https://gtmetrix.com/reports/" },
+        { d: 4, n: "Qualys SSL Labs", p: "Auditoría profunda de cifrado y seguridad de conexión SSL/TLS.", b: "Cifrado SSL", u: "https://www.ssllabs.com/ssltest/analyze.html?d=" },
+        { d: 4, n: "Security Headers", p: "Analiza cabeceras de respuesta de seguridad (CSP, HSTS).", b: "Cabeceras Sec", u: "https://securityheaders.com/?q=" },
+        { d: 4, n: "Nibbler", p: "Prueba de calidad general: SEO, Social y Tecnología.", b: "Calidad General", u: "https://nibbler.silktide.com/en/reports/" },
+        { d: 4, n: "BuiltWith", p: "Transparencia: Identifica el stack tecnológico utilizado.", b: "Ver Stack", u: "https://builtwith.com/" },
+        { d: 4, n: "Woorank", p: "Auditoría integral de visibilidad y autoridad en buscadores.", b: "SEO & Autoridad", u: "https://www.woorank.com/es/www/" },
+        { d: 4, n: "Squoosh", p: "Optimización y compresión ética de medios visuales.", b: "Audit Imágenes", u: "https://squoosh.app/" },
+        { d: 4, n: "Check My Links", p: "Detección de enlaces rotos y autoridad de redirección.", b: "Enlaces Rotos", u: "https://www.drlinkcheck.com/check?url=" },
+        { d: 4, n: "Google PageSpeed Web", p: "Informe de Core Web Vitals y experiencia de usuario real.", b: "Web Report", u: "https://pagespeed.web.dev/report?url=" },
+        { d: 4, n: "Rich Results Test", p: "Aptitud para resultados enriquecidos en Google Search.", b: "Rich Results", u: "https://search.google.com/test/rich-results?url=" },
+
+        // DIMENSIÓN 5
+        { d: 5, n: "Webby Awards", p: "Buscador de excelencia y premios internacionales en la red.", b: "Premios Web", u: "https://winners.webbyawards.com/search?searchTerm=" },
+        { d: 5, n: "Wayback Machine", p: "Historial de archivos para evaluar coherencia temporal.", b: "Historial Web", u: "https://web.archive.org/web/*/" },
+        { d: 5, n: "Majestic SEO", p: "Análisis de Trust Flow y flujo de confianza de enlaces.", b: "Trust Flow", u: "https://majestic.com/reports/site-explorer?folder=&q=" },
+        { d: 5, n: "Ahrefs Checker", p: "Reputación y autoridad en el grafo global de la web.", b: "Domain Rating", u: "https://ahrefs.com/backlink-checker?target=" },
+        { d: 5, n: "Crunchbase", p: "Contexto empresarial: Fundadores, rondas y tracción.", b: "Contexto Corp", u: "https://www.crunchbase.com/textsearch?query=" },
+        { d: 5, n: "ScamAdviser", p: "Legitimidad, edad del dominio y nivel de confianza real.", b: "Ver Legitimidad", u: "https://www.scamadviser.com/check-website/" },
+        { d: 5, n: "DomainTools", p: "Investigación de propiedad técnica y registro de dominio.", b: "Whois Pro", u: "https://whois.domaintools.com/" },
+        { d: 5, n: "SimilarWeb", p: "Ecosistema de tráfico y relevancia de mercado comparada.", b: "Relevancia", u: "https://www.similarweb.com/website/" },
+        { d: 5, n: "NewsGuard", p: "Etiquetas de credibilidad y confianza informativa (Periodismo).", b: "Credibilidad", u: "https://www.newsguardtech.com/" }
+    ];
+
+    /* RENDERIZADO DINÁMICO */
+    recursos.forEach(r => {
+        const item = document.createElement('div');
+        item.className = 'audit-item';
+        item.innerHTML = `
+            <h4>${r.n}</h4>
+            <p>${r.p}</p>
+            <button onclick="window.open('${r.u}' + (['4', '2', '5'].includes('${r.d}') && !'${r.u}'.includes('url=') ? getDomain() : getURL()), '_blank')">${r.b}</button>
+        `;
+        document.getElementById(`grid-d${r.d}`).appendChild(item);
+    });
+
+    /* FUNCIONES IA (SIMULACIÓN DE BACKEND LOCAL) */
+    async function runGoogle(){
+        const out = document.getElementById("output");
+        out.textContent = "⏳ Consultando Google Lighthouse API para: " + getURL();
+        try {
+            const res = await fetch("http://localhost:3000/api/google/pagespeed", {
+                method: "POST", headers: {"Content-Type":"application/json"},
+                body: JSON.stringify({ url: getURL() })
+            });
+            const data = await res.json();
+            out.textContent = JSON.stringify(data, null, 2);
+        } catch(e) { out.textContent = "❌ Error: Servidor Dentrix Local (Node.js) no responde en puerto 3000."; }
+    }
+
+    async function runAzure(){
+        const out = document.getElementById("output");
+        out.textContent = "⏳ Iniciando Azure IA Sentiment Analysis...";
+        try {
+            const res = await fetch("http://localhost:3000/api/azure/analyze", {
+                method: "POST", headers: {"Content-Type":"application/json"},
+                body: JSON.stringify({ text: getURL() })
+            });
+            const data = await res.json();
+            out.textContent = JSON.stringify(data, null, 2);
+        } catch(e) { out.textContent = "❌ Error: Fallo en la comunicación con el módulo de Azure IA."; }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+/* * cssAmigos.css [ Módulo AmigosWebAmigos ] */
+
+.controles-flotantes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.herramientas-lectura {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-bottom: 2px solid var(--color-base-maestro);
+}
+
+.enlace-directorio {
+    text-align: center;
+    padding: 2rem;
+}

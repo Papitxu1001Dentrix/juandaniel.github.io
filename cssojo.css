@@ -1,0 +1,161 @@
+/* ================================================================
+   CSS.CSS — DENTRIX 1.0 FINAL (PRODUCCIÓN)
+   ---------------------------------------------------------------
+   - Optimización: Multi-dispositivo (Ayer, Hoy, Mañana)
+   - Proyecto: Amigos Web / Amigas Web
+   - Ubicación: https://www.saludconnutricion.com/AmigosWebAmigas/css.css
+   - Diseño: Limpio, Profesional, Tecnológico, Fotográfico
+================================================================ */
+
+:root {
+    /* Paleta de Colores Corporativa */
+    --color-primary: #1A365D; 
+    --color-secondary: #2563EB;
+    --color-accent: #3B82F6;
+    --color-text: #000000;
+    --color-text-muted: #64748b;
+    --color-bg-light: #F1F5F9;
+    --color-white: #FFFFFF;
+    
+    /* Efectos y Sombras */
+    --glass-border: rgba(226, 232, 240, 0.8);
+    --shadow-neo: 10px 10px 20px #d1d9e6, -10px -10px 20px #ffffff;
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* 1. Reset y Estilos Globales */
+* { 
+    box-sizing: border-box; 
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+    margin: 0; 
+    padding: 0;
+}
+
+html { 
+    scroll-behavior: smooth; 
+    font-size: 16px; /* Base para rem */
+}
+
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif; 
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg-light);
+    padding-bottom: 120px !important; /* Espacio para el dock/mariposa */
+}
+
+/* 2. Estructura y Contenedores */
+.container { 
+    width: 92%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px 0;
+}
+
+.company-card {
+    background: var(--color-white);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: clamp(1.2rem, 4vw, 2rem);
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-neo);
+}
+
+/* 3. Tipografía y Encabezados */
+h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 800;
+    text-align: center;
+    margin: 2.5rem 0;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    color: var(--color-primary);
+    border-left: 6px solid var(--color-secondary);
+    background: linear-gradient(to right, #ffffff, #f1f5f9);
+    padding: 1rem 1.2rem;
+    border-radius: 0 10px 10px 0;
+    margin: 2rem 0 1.2rem 0;
+}
+
+/* 4. Elementos de Interfaz (Badges, Links, Listas) */
+.badge-amigo {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+a {
+    color: var(--color-secondary) !important;
+    text-decoration: underline;
+    font-weight: 600;
+    word-break: break-all;
+}
+
+ul {
+    padding-left: 1.5rem;
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+ul li::before {
+    content: "●";
+    color: var(--color-secondary);
+    font-size: 0.8rem;
+    position: absolute;
+    left: -1.2rem;
+    top: 0.1rem;
+}
+
+/* 5. Multimedia y Héroe (Protocolo de Visibilidad) */
+.hero-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1400 / 600;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 2rem 0 3.5rem 0;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    display: block;
+}
+
+/* 6. Adaptabilidad (Ayer, Hoy, Mañana) */
+
+/* Dispositivos del Ayer (Móviles / Pantallas pequeñas) */
+@media (max-width: 480px) {
+    html { font-size: 14px; }
+    .container { width: 94%; }
+    .hero-image { border-radius: 12px; margin-bottom: 2rem; }
+    h1 { margin: 1.5rem 0; }
+}
+
+/* Tablets (Hoy) */
+@media (max-width: 768px) {
+    .hero-image { aspect-ratio: 16 / 9; }
+}
+
+/* Pantallas del Mañana (4K / UltraWide) */
+@media (min-width: 2100px) {
+    html { font-size: 20px; }
+    .container { max-width: 1600px; }
+    .company-card { padding: 3rem; }
+}
+
+/* 7. Integración Kakarota */
+#ia-butterfly-container { transition: all 4s ease-in-out !important; }
+#kakarota-chat-bubble { backdrop-filter: blur(15px); }

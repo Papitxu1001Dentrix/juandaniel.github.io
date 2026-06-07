@@ -1,0 +1,1329 @@
+/* ==========================================================================
+   CSS.CSS — DENTRIX 1.0 MAXIMA PRODUCCIÓN ( FUSIÓN INTEGRAL 2026 )
+   --------------------------------------------------------------------------
+   - Optimización : Multi-dispositivo ( Ayer , Hoy , Mañana ) & Ultra-Rendimiento
+   - Proyecto : Salud con Nutrición — Directorio Gerencial ( Amigos Web / Amigas Web )
+   - Ubicación Servidor : https://www.saludconnutricion.com/AmigosWebAmigas/css.css
+   - Diseño : Limpio , Profesional , Tecnológico , Fotográfico y Accesible
+   ========================================================================== */
+
+:root {
+    /* Paleta de Identidad Profesional y Corporativa */
+    --bg-main : #fcfdfe ;
+    --panel-bg : #ffffff ;
+    --color-primary : #1a365d ; 
+    --color-secondary : #2563eb ;
+    --color-accent : #3b82f6 ;
+    --accent-core : #5dade2 ;
+    --accent-hover : #3498db ;
+    --azul-profesional : #455a64 ;
+    --text-prime : #2c3e50 ;
+    --text-text : #000000 ;
+    --text-meta : #7f8c8d ;
+    --text-muted : #64748b ;
+    --border-ui : #e2e8f0 ;
+    --glass-border : rgba(226, 232, 240, 0.8) ;
+    --color-white : #ffffff ;
+    --bg-legend : #f8fafc ;
+    
+    /* Sistema de Sombras y Efectos de Profundidad */
+    --shadow-sm : 0 2px 4px rgba(0, 0, 0, 0.02) ;
+    --shadow-soft : 0 4px 6px -1px rgba(0, 0, 0, 0.1) ;
+    --shadow-md : 0 10px 15px -3px rgba(0, 0, 0, 0.07) , 0 4px 6px -2px rgba(0, 0, 0, 0.05) ;
+    --shadow-lg : 0 20px 25px -5px rgba(0, 0, 0, 0.1) ;
+    --shadow-neo : 10px 10px 20px #d1d9e6 , -10px -10px 20px #ffffff ;
+    
+    /* Dinámicas de Movimiento y Transición */
+    --transition : all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) ;
+}
+
+/* 1 . RESET Y ESTILOS GLOBALES BASE */
+* { 
+    box-sizing : border-box ; 
+    -webkit-tap-highlight-color : rgba(0, 0, 0, 0) ; 
+    margin : 0 ; 
+    padding : 0 ;
+}
+
+html { 
+    scroll-behavior : smooth ; 
+    font-size : 16px ; 
+}
+
+body {
+    font-family : 'Inter' , system-ui , -apple-system , Arial , Helvetica , sans-serif ;
+    -webkit-font-smoothing : antialiased ;
+    background-color : var(--bg-main) ;
+    color : var(--text-prime) ;
+    line-height : 1.7 ;
+    transition : background-color 0.3s ease , color 0.3s ease ;
+    padding-bottom : 140px !important ; /* Espacio optimizado para smart-bottom-bar / ia-mariposa */
+}
+
+/* 2 . MAQUETACIÓN , CONTENEDORES Y ESTRUCTURAS */
+.container { 
+    width : 92% ; 
+    max-width : 1200px ; 
+    margin : 0 auto ; 
+    padding : 20px 0 ;
+}
+
+.company-card {
+    background : var(--panel-bg) ;
+    border : 1px solid var(--glass-border) ;
+    border-radius : 20px ;
+    padding : clamp(1.2rem, 4vw, 2rem) ;
+    margin-bottom : 30px ;
+    box-shadow : var(--shadow-neo) ;
+}
+
+/* 3 . ARQUITECTURA DE CABECERA GERENCIAL */
+.main-header {
+    background : linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) ;
+    color : var(--azul-profesional) ;
+    padding : 100px 20px ;
+    text-align : center ;
+    border-bottom : 6px solid var(--accent-core) ;
+    box-shadow : var(--shadow-sm) ;
+}
+
+.main-header h1 {
+    font-weight : 800 ;
+    letter-spacing : -0.03em ;
+    font-size : 2.5rem ;
+    margin-bottom : 15px ;
+    color : var(--azul-profesional) ;
+    background : none ;
+    -webkit-text-fill-color : initial ;
+}
+
+.badge-institutional {
+    display : inline-block ;
+    padding : 4px 12px ;
+    background : rgba(93, 173, 226, 0.15) ;
+    border : 1px solid var(--accent-core) ;
+    color : var(--color-secondary) ;
+    font-size : 0.75rem ;
+    font-weight : 700 ;
+    text-transform : uppercase ;
+    border-radius : 4px ;
+    margin-bottom : 15px ;
+}
+
+.slogan {
+    font-size : 1.1rem ;
+    color : var(--text-muted) ;
+    margin-top : 8px ;
+    font-weight : 400 ;
+}
+
+.header-meta {
+    font-size : 0.9rem ;
+    color : var(--accent-core) ;
+    font-weight : 700 ;
+    text-transform : uppercase ;
+    letter-spacing : 0.1em ;
+    margin-top : 15px ;
+}
+
+/* 4 . TIPOGRAFÍA , ENCABEZADOS Y ELEMENTOS DE TEXTO */
+h1 {
+    font-size : clamp(1.8rem, 5vw, 2.5rem) ;
+    font-weight : 800 ;
+    text-align : center ;
+    margin : 2.5rem 0 ;
+    background : linear-gradient(135deg, var(--color-primary), var(--color-secondary)) ;
+    -webkit-background-clip : text ;
+    -webkit-text-fill-color : transparent ;
+}
+
+h2.categoria-titulo {
+    font-size : clamp(1.1rem, 3vw, 1.3rem) ;
+    color : var(--color-primary) ;
+    border-left : 6px solid var(--color-secondary) ;
+    background : linear-gradient(to right, var(--panel-bg), var(--bg-legend)) ;
+    padding : 1rem 1.2rem ;
+    border-radius : 0 10px 10px 0 ;
+    margin : 2rem 0 1.2rem 0 ;
+}
+
+a {
+    color : var(--color-secondary) !important ;
+    text-decoration : underline ;
+    font-weight : 600 ;
+    word-break : break-all ;
+}
+
+a:hover {
+    color : var(--accent-hover) !important ;
+}
+
+/* 5 . NAVEGACIÓN TÉCNICA ( SISTEMA DE ENLACES Y MARCADORES ) */
+.category-menu {
+    display : grid ;
+    grid-template-columns : repeat(auto-fill, minmax(260px, 1fr)) ;
+    gap : 20px ;
+    padding : 50px 40px ;
+    max-width : 1500px ;
+    margin : auto ;
+}
+
+.category-card {
+    background : var(--panel-bg) ;
+    border : 1px solid var(--border-ui) ;
+    padding : 25px ;
+    border-radius : 14px ;
+    text-decoration : none ;
+    color : var(--text-prime) ;
+    font-weight : 600 ;
+    transition : var(--transition) ;
+    box-shadow : var(--shadow-sm) ;
+    display : flex ;
+    align-items : center ;
+    gap : 12px ;
+}
+
+.category-card:hover { 
+    border-color : var(--accent-core) ; 
+    transform : translateY(-5px) scale(1.02) ;
+    box-shadow : var(--shadow-md) ;
+    color : var(--accent-hover) ;
+}
+
+.cat-id , .cat-num {
+    color : var(--accent-core) ;
+    font-family : monospace ;
+    font-size : 1.1rem ;
+}
+
+/* 6 . LISTAS Y COMPONENTES DE INTERFAZ ( BADGES / PILLS ) */
+ul {
+    padding-left : 1.5rem ;
+    list-style-type : none ;
+}
+
+ul li {
+    margin-bottom : 1rem ;
+    position : relative ;
+    color : var(--text-text) ;
+}
+
+ul li::before {
+    content : "●" ;
+    color : var(--color-secondary) ;
+    font-size : 0.8rem ;
+    position : absolute ;
+    left : -1.2rem ;
+    top : 0.1rem ;
+}
+
+.badge-amigo {
+    display : inline-block ;
+    background : linear-gradient(135deg, var(--color-primary), var(--color-secondary)) ;
+    color : white ;
+    padding : 0.5rem 1.5rem ;
+    border-radius : 50px ;
+    font-size : 0.9rem ;
+    font-weight : 700 ;
+    margin-bottom : 1rem ;
+    box-shadow : 0 4px 10px rgba(37, 99, 235, 0.2) ;
+}
+
+.tag-pill , .tag-item {
+    background : var(--bg-legend) ;
+    color : var(--text-prime) ;
+    padding : 4px 12px ;
+    border-radius : 4px ;
+    font-size : 0.75rem ;
+    font-weight : 800 ;
+    text-transform : uppercase ;
+    border : 1px solid var(--border-ui) ;
+}
+
+.auto-tags , .auto-tags-container {
+    display : flex ;
+    gap : 8px ;
+    margin-top : 15px ;
+    flex-wrap : wrap ;
+}
+
+/* 7 . SECCIONES , FICHAS DE ACTIVOS Y ANIMACIONES CONTENIDO */
+.categoria-seccion { 
+    padding : 50px 20px ; 
+    max-width : 1150px ; 
+    margin : auto ; 
+    animation : slideUp 0.6s ease-out ;
+}
+
+@keyframes slideUp {
+    from { opacity : 0 ; transform : translateY(20px) ; }
+    to { opacity : 1 ; transform : translateY(0) ; }
+}
+
+.categoria-seccion:target {
+    animation : highlightSection 2s ease-out ;
+    border-left-color : #f39c12 ; 
+}
+
+@keyframes highlightSection {
+    0% { background-color : rgba(243, 156, 18, 0.05) ; }
+    100% { background-color : transparent ; }
+}
+
+.objetivo-box {
+    background : var(--bg-legend) ;
+    padding : 15px 20px ;
+    border-radius : 8px ;
+    font-size : 0.95rem ;
+    margin-bottom : 25px ;
+    border-left : 4px solid var(--text-meta) ;
+    color : var(--text-prime) ;
+}
+
+.ficha-web {
+    background : var(--panel-bg) ;
+    border : 1px solid var(--border-ui) ;
+    padding : 35px ;
+    border-radius : 20px ;
+    margin-bottom : 30px ;
+    box-shadow : var(--shadow-sm) ;
+    transition : var(--transition) ;
+    position : relative ;
+    overflow : hidden ;
+}
+
+.ficha-web::before {
+    content : "" ;
+    position : absolute ;
+    top : 0 ; left : 0 ; width : 4px ; height : 100% ;
+    background : var(--accent-core) ;
+    opacity : 0 ; 
+    transition : 0.3s ;
+}
+
+.ficha-web:hover::before { 
+    opacity : 1 ; 
+}
+
+.ficha-web:hover {
+    box-shadow : var(--shadow-lg) ;
+    border-color : var(--accent-core) ;
+}
+
+.ficha-header {
+    display : flex ;
+    justify-content : space-between ;
+    align-items : center ;
+    margin-bottom : 15px ;
+    font-size : 1.1rem ;
+    color : var(--color-primary) ;
+}
+
+.web-description {
+    font-size : 1rem ;
+    color : var(--text-text) ;
+    margin-bottom : 15px ;
+}
+
+.ficha-footer-links {
+    display : flex ;
+    flex-wrap : wrap ;
+    gap : 20px ;
+    font-size : 0.9rem ;
+    align-items : center ;
+    border-top : 1px solid var(--border-ui) ;
+    padding-top : 15px ;
+    margin-top : 15px ;
+}
+
+.url-link {
+    color : var(--text-meta) ;
+    font-family : monospace ;
+}
+
+.status-restriction-notice {
+    color : var(--text-meta) ;
+    font-size : 0.85rem ;
+}
+
+.section-special {
+    padding : 40px ;
+    background : var(--panel-bg) ;
+    border-radius : 20px ;
+    border-left : 8px solid var(--accent-core) ;
+    margin-bottom : 50px ;
+    box-shadow : var(--shadow-md) ;
+}
+
+.section-special h2 {
+    color : var(--text-prime) ;
+    font-size : 1.7rem ;
+    margin-top : 0 ;
+    font-weight : 700 ;
+}
+
+.future-projection-box {
+    background : linear-gradient(to right, #f0f7ff, var(--panel-bg)) ;
+    border : 1px dashed var(--accent-core) ;
+    padding : 30px ;
+    border-radius : 15px ;
+    margin : 40px 0 ;
+    color : #2c5282 ;
+}
+
+/* 8 . MULTIMEDIA , CONTROLES DE IMAGEN ( 1400x600 ) Y BREADCRUMBS */
+.hero-image {
+    width : 100% ;
+    height : auto ;
+    aspect-ratio : 1400 / 600 ;
+    object-fit : cover ;
+    border-radius : 20px ;
+    margin : 2rem 0 3.5rem 0 ;
+    border : 1px solid var(--glass-border) ;
+    box-shadow : 0 25px 50px -12px rgba(0, 0, 0, 0.25) ;
+    display : block ;
+}
+
+.breadcrumb-nav {
+    max-width : 1150px ;
+    margin : 30px auto ;
+    padding : 0 40px ;
+    display : flex ;
+    gap : 15px ;
+    align-items : center ;
+    flex-wrap : wrap ;
+}
+
+.breadcrumb-cluster {
+    display : flex ;
+    align-items : center ;
+    gap : 10px ;
+}
+
+.breadcrumb-separator {
+    color : var(--text-meta) ;
+}
+
+.btn-breadcrumb {
+    background : var(--panel-bg) ;
+    border : 1px solid var(--border-ui) ;
+    padding : 12px 24px ;
+    border-radius : 60px ;
+    color : var(--text-prime) ;
+    font-weight : 600 ;
+    transition : var(--transition) ;
+    display : flex ;
+    align-items : center ;
+    text-decoration : none ;
+    box-shadow : var(--shadow-sm) ;
+}
+
+.btn-breadcrumb:hover {
+    background : #f0f7ff ;
+    border-color : var(--accent-core) ;
+    transform : translateY(-3px) ;
+    box-shadow : var(--shadow-md) ;
+}
+
+.current-page {
+    background : var(--bg-legend) ;
+    border-color : var(--border-ui) ;
+    cursor : default ;
+}
+
+.lang-selector {
+    display : flex ;
+    gap : 8px ;
+    margin-left : auto ; 
+    align-items : center ;
+}
+
+.lang-label {
+    font-size : 0.85rem ;
+    color : var(--text-meta) ;
+    font-weight : 600 ;
+}
+
+.btn-lang {
+    background : var(--panel-bg) ;
+    border : 1px solid var(--border-ui) ;
+    padding : 6px 14px ;
+    border-radius : 60px ;
+    font-size : 0.75rem ;
+    font-weight : 700 ;
+    cursor : pointer ;
+    transition : var(--transition) ;
+    color : var(--text-prime) ;
+}
+
+.btn-lang:hover { 
+    border-color : var(--accent-core) ; 
+    background : #f0f7ff ; 
+}
+
+/* 9 . PROTOCOLO INTERACTIVO Y EMOJIS ANIMADOS SECUENCIALES */
+.friend-presentation-link {
+    display : inline-flex ;
+    align-items : center ;
+    text-decoration : none ;
+    vertical-align : middle ;
+    margin-top : 20px ;
+    margin-left : 12px ;
+    padding : 10px 20px ;
+    background : #f0f7ff ;
+    border-radius : 50px ;
+    color : var(--accent-hover) ;
+    font-weight : 700 ;
+    transition : var(--transition) ;
+    position : relative ;
+    cursor : pointer ;
+    z-index : 10 ;
+}
+
+.friend-presentation-link:hover { 
+    background : var(--accent-core) ; 
+    color : white ; 
+}
+
+.emoji-animado {
+    display : inline-block ;
+    font-size : 1.6rem ;
+    margin-right : 10px ;
+    transition : transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) ;
+}
+
+.friend-presentation-link:hover .emoji-animado {
+    transform : scale(1.8) rotate(10deg) ;
+    color : transparent ; 
+}
+
+.friend-presentation-link:hover .emoji-animado::after {
+    position : absolute ;
+    left : 20px ; 
+    top : 8px ;
+    content : "😊" ;
+    color : initial ;
+    animation : secuenciaEmoji 2s steps(1) infinite ;
+}
+
+@keyframes secuenciaEmoji {
+    0%   { content : "😊" ; } 
+    25%  { content : "😮" ; } 
+    50%  { content : "😌" ; } 
+    75%  { content : "😉" ; } 
+}
+
+.emoji-legend {
+    background : #f8fafc ;
+    border : 1px solid var(--border-ui) ;
+    padding : 25px ;
+    border-radius : 20px ;
+    max-width : 1000px ;
+    margin : 30px auto ;
+    text-align : center ;
+}
+
+.e-tip {
+    font-size : 1.6rem ;
+    padding : 10px ;
+    display : inline-block ;
+    transition : var(--transition) ;
+}
+
+.e-tip:hover { 
+    transform : scale(1.5) translateY(-5px) ; 
+}
+
+/* 10 . SERVICIOS PROPIOS DE APIS ( BUSCADOR INTELECTUAL , ESCUDOS , FOOTER ) */
+.control-dashboard-panel {
+    max-width : 1150px ;
+    margin : 20px auto ;
+    padding : 0 20px ;
+}
+
+.search-container { 
+    max-width : 100% ; 
+    margin : 15px 0 ; 
+}
+
+.search-engine-wrapper {
+    display : flex ;
+    flex-direction : column ;
+    gap : 8px ;
+}
+
+.input-search-group {
+    display : flex ;
+    align-items : center ;
+    border : 2px solid var(--border-ui) ;
+    border-radius : 50px ;
+    background : var(--panel-bg) ;
+    padding-left : 20px ;
+    overflow : hidden ;
+    box-shadow : var(--shadow-sm) ;
+    transition : var(--transition) ;
+}
+
+.input-search-group:focus-within {
+    border-color : var(--accent-core) ;
+    box-shadow : 0 0 0 4px rgba(93, 173, 226, 0.15) ;
+}
+
+#webSearch {
+    flex : 1 ;
+    border : none ;
+    padding : 15px 20px ; 
+    font-size : 1rem ;
+    outline : none ;
+    background : transparent ;
+    color : var(--text-prime) ;
+}
+
+.btn-search-execute {
+    background : var(--accent-core) ;
+    color : white ;
+    border : none ;
+    padding : 16px 30px ;
+    font-weight : 700 ;
+    cursor : pointer ;
+    transition : background 0.2s ease ;
+    font-size : 0.95rem ;
+}
+
+.btn-search-execute:hover {
+    background : var(--accent-hover) ;
+}
+
+.search-tip-text {
+    font-size : 0.85rem ;
+    color : var(--text-meta) ;
+    font-style : italic ;
+    padding-left : 20px ;
+}
+
+.safety-shield {
+    font-size : 1.1rem ;
+    margin-left : 8px ;
+    vertical-align : middle ;
+    cursor : pointer ;
+    transition : var(--transition) ;
+}
+
+.shield-verified , .shield-secure { 
+    color : #2ecc71 ; 
+    filter : drop-shadow(0 0 2px rgba(46, 204, 113, 0.4)) ; 
+}
+
+.shield-checking { 
+    color : var(--text-meta) ; 
+    opacity : 0.6 ; 
+    animation : pulse 1.5s infinite ; 
+}
+
+.shield-warning { 
+    color : #e74c3c ; 
+}
+
+@keyframes pulse { 
+    0% { opacity : 0.4 ; } 
+    50% { opacity : 1 ; } 
+    100% { opacity : 0.4 ; } 
+}
+
+.stats-bar {
+    background : #e0f2fe ;
+    color : #0369a1 ;
+    padding : 12px 24px ;
+    border-radius : 8px ;
+    display : inline-block ;
+    font-weight : 700 ;
+    font-size : 0.95rem ;
+    border : 1px solid #bae6fd ;
+}
+
+.footer-pro {
+    background : var(--bg-legend) ;
+    color : var(--text-prime) ;
+    padding : 80px 40px ;
+    margin-top : 100px ;
+    border-top : 1px solid var(--border-ui) ;
+}
+
+.footer-final-text {
+    text-align : center ;
+    border-top : 1px solid var(--border-ui) ;
+    padding-top : 50px ;
+    font-size : 0.95rem ;
+    color : var(--text-meta) ;
+}
+
+/* ==========================================================================
+   11 . ARCHITECTURA SMART BOTTOM BAR 2026 ( FILA HORIZONTAL ESTRICTA )
+   ========================================================================== */
+
+/* Cinturón base fijo al suelo de la pantalla */
+.smart-bottom-bar {
+    position : fixed !important ;
+    bottom : 0 !important ;
+    left : 0 !important ;
+    width : 100% !important ;
+    height : 54px !important ; /* Altura institucional optimizada */
+    background : rgba(26, 54, 93, 0.98) !important ; /* Azul corporativo profundo filtrado */
+    backdrop-filter : blur(12px) ;
+    -webkit-backdrop-filter : blur(12px) ;
+    border-top : 3px solid var(--accent-core) !important ;
+    z-index : 100000 !important ;
+    margin : 0 !important ;
+    padding : 0 !important ;
+    display : flex !important ;
+    align-items : center !important ;
+    box-shadow : 0 -8px 32px rgba(0, 0, 0, 0.25) ;
+}
+
+/* Alineador interno del radar */
+.radar-container {
+    width : 100% !important ;
+    max-width : 1250px !important ;
+    margin : 0 auto !important ;
+    display : flex !important ;
+    flex-direction : row !important ; /* Fuerza la fila horizontal e impide la columna vertical */
+    align-items : center !important ;
+    justify-content : space-between !important ;
+    padding : 0 20px !important ;
+    box-sizing : border-box !important ;
+}
+
+/* Acción rápida : Retorno al origen */
+.bar-action {
+    display : flex !important ;
+    align-items : center !important ;
+}
+
+.scroll-top-btn {
+    text-decoration : none !important ;
+    font-size : 1.3rem !important ;
+    display : inline-block !important ;
+    transition : transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important ;
+}
+
+.scroll-top-btn:hover {
+    transform : translateY(-4px) scale(1.2) !important ;
+}
+
+/* Unidad de telemetría ( Texto de Secciones ) */
+.telemetry-unit {
+    display : flex !important ;
+    flex-direction : row !important ;
+    align-items : center !important ;
+    gap : 6px !important ;
+    background : rgba(255, 255, 255, 0.08) !important ;
+    padding : 4px 12px !important ;
+    border-radius : 6px !important ;
+    font-size : 0.8rem !important ;
+    white-space : nowrap !important ;
+    border : 1px solid rgba(255, 255, 255, 0.1) !important ;
+}
+
+.indicator-label {
+    color : var(--accent-core) !important ;
+    font-weight : 800 !important ;
+    text-transform : uppercase ;
+    letter-spacing : 0.5px ;
+}
+
+#current-section-name {
+    color : var(--color-white) !important ;
+    font-weight : 700 !important ;
+}
+
+/* Contenedor de los 19 Emojis : Cinturón horizontal puro */
+.radar-emojis-group {
+    display : flex !important ;
+    flex-direction : row !important ; /* Fuerza los iconos a alinearse en fila */
+    align-items : center !important ;
+    gap : 8px !important ; /* Espacio milimétrico y limpio */
+    flex-wrap : nowrap !important ; /* PROHIBIDO saltar de línea o apilarse verticalmente */
+}
+
+/* Las 19 Pasarelas Individuales ( Mini Emojis ) */
+.nav-dot-emoji {
+    display : inline-block !important ;
+    text-decoration : none !important ;
+    font-size : 1.25rem !important ;
+    padding : 2px 4px !important ;
+    line-height : 1 !important ;
+    transition : transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important ;
+}
+
+.nav-dot-emoji:hover {
+    transform : scale(1.4) translateY(-3px) !important ;
+}
+
+/* ==========================================================================
+   11 . B . PROTOCOLO DE ILUMINACIÓN Y ENFOQUE VISUAL ( ACCESIBILIDAD ALTA )
+   ========================================================================== */
+
+/* Contenedor del Control de Iluminación : Integrado en la arquitectura sin flotar */
+.theme-switch-container {
+    display : flex ;
+    justify-content : flex-end ;
+    align-items : center ;
+    max-width : 1150px ;
+    margin : 20px auto ;
+    padding : 0 40px ;
+    gap : 12px ;
+}
+
+.theme-switch-label {
+    font-size : 0.85rem ;
+    color : var(--azul-profesional) ;
+    font-weight : 800 ;
+    text-transform : uppercase ;
+    letter-spacing : 0.05em ;
+}
+
+/* Botón de Activación : Estilo Institucional y Limpio */
+.btn-theme-toggle {
+    background : #ffffff ;
+    border : 2px solid var(--color-primary) ;
+    padding : 10px 20px ;
+    border-radius : 8px ;
+    color : var(--color-primary) ;
+    font-weight : 700 ;
+    font-size : 0.9rem ;
+    cursor : pointer ;
+    transition : var(--transition) ;
+    display : inline-flex ;
+    align-items : center ;
+    gap : 8px ;
+    box-shadow : var(--shadow-sm) ;
+}
+
+.btn-theme-toggle:hover {
+    background : #e0f2fe ;
+    border-color : var(--color-secondary) ;
+    color : var(--color-secondary) ;
+    transform : translateY(-1px) ;
+}
+
+/* PROTOCOLO "LUZ DE ENFOQUE" ( MAXIMIZA LA VISIBILIDAD Y EL CONTRASTE ) */
+body.dark-mode {
+    --bg-main : #ffffff ;             /* Fondo blanco puro reflectante */
+    --panel-bg : #f8fafc ;            /* Fichas en gris ultra-claro para descansar la vista */
+    --text-prime : #000000 ;          /* Títulos principales en negro absoluto */
+    --text-text : #000000 ;           /* Texto descriptivo en negro absoluto para máxima lectura */
+    --border-ui : #000000 ;           /* Bordes negros definidos para delimitar claramente las cajas */
+    --glass-border : #000000 ;
+    --color-secondary : #1d4ed8 ;     /* Enlaces en azul oscuro de alta visibilidad académica */
+    --accent-hover : #111827 ;
+}
+
+/* Reglas de Enfoque Avanzado cuando el protocolo está activo */
+body.dark-mode .ficha-web {
+    background : #ffffff !important ;
+    border : 3px solid #000000 !important ; /* Contorno grueso para definir la ficha */
+    box-shadow : 0 10px 30px rgba(0, 0, 0, 0.1) !important ;
+    padding : 40px !important ;
+}
+
+/* Al pasar el cursor sobre una ficha, esta se ilumina y el resto no distrae */
+body.dark-mode .ficha-web:hover {
+    border-color : var(--color-secondary) !important ;
+    background : #f0f7ff !important ;
+}
+
+/* Forzar legibilidad absoluta en tipografías y enlaces del directorio */
+body.dark-mode .ficha-web strong,
+body.dark-mode .web-description,
+body.dark-mode .ficha-web li,
+body.dark-mode .url-link {
+    color : #000000 !important ;
+    font-weight : 700 !important ; /* Aumenta el grosor del texto para lectura fácil */
+}
+
+body.dark-mode a {
+    color : #1d4ed8 !important ;
+    text-decoration : underline !important ;
+    text-underline-offset : 4px ;
+}
+
+body.dark-mode a:hover {
+    color : #000000 !important ;
+}
+
+/* Ajuste del botón de presentación de amigo para que mantenga un contraste impecable */
+body.dark-mode .friend-presentation-link {
+    background : #1d4ed8 !important ;
+    color : #ffffff !important ;
+    border : 2px solid #1d4ed8 !important ;
+}
+
+body.dark-mode .friend-presentation-link:hover {
+    background : #000000 !important ;
+    border-color : #000000 !important ;
+}
+
+/* Adaptación reglamentaria de la Smart Bottom Bar bajo el protocolo de alta visibilidad */
+body.dark-mode .smart-bottom-bar {
+    background : #ffffff !important ;
+    border-top : 3px solid #000000 !important ;
+    box-shadow : 0 -4px 20px rgba(0, 0, 0, 0.15) !important ;
+}
+
+body.dark-mode #current-section-name {
+    color : #000000 !important ;
+}
+
+body.dark-mode .indicator-label {
+    color : #1d4ed8 !important ;
+}
+
+body.dark-mode .telemetry-unit {
+    background : #f1f5f9 !important ;
+    border-color : #000000 !important ;
+}
+
+/* 12 . RESPONSIVIDAD ADAPTATIVA MULTI-DISPOSITIVO */
+
+/* Dispositivos del Ayer ( Móviles / Pantallas Pequeñas ) */
+@media (max-width : 480px) {
+    html { font-size : 14px ; }
+    .container { width : 94% ; }
+    .hero-image { border-radius : 12px ; margin-bottom : 2rem ; }
+    h1 { margin : 1.5rem 0 ; }
+    .breadcrumb-nav , .category-menu , .categoria-seccion , .legend-institutional-section , .control-dashboard-panel {
+        margin-left : 15px ;
+        margin-right : 15px ;
+        padding-left : 10px ;
+        padding-right : 10px ;
+    }
+    .input-search-group {
+        flex-direction : column ;
+        border-radius : 20px ;
+        padding-left : 0 ;
+    }
+    #webSearch {
+        width : 100% ;
+        padding : 12px ;
+        text-align : center ;
+    }
+    .btn-search-execute {
+        width : 100% ;
+        padding : 12px ;
+    }
+    .smart-bottom-bar {
+        height : auto !important ;
+        padding : 6px 0 !important ;
+    }
+    .radar-container {
+        flex-direction : column !important ;
+        gap : 6px !important ;
+    }
+    .radar-emojis-group {
+        flex-wrap : wrap !important ;
+        justify-content : center ;
+    }
+}
+
+/* Tablets e Interfaces Híbridas ( Hoy ) */
+@media (max-width : 768px) {
+    .category-menu { grid-template-columns : 1fr ; padding : 20px ; }
+    .main-header h1 { font-size : 2rem ; }
+    .main-header { padding : 60px 15px ; }
+    .ficha-web { padding : 20px ; }
+    .hero-image { aspect-ratio : 16 / 9 ; }
+    .friend-presentation-link:hover .emoji-animado { transform : scale(1.2) ; } 
+    .lang-selector { margin-left : 0 ; width : 100% ; justify-content : center ; margin-top : 10px ; }
+}
+
+/* Pantallas de Gran Formato y del Mañana ( 4K / UltraWide ) */
+@media (min-width : 2100px) {
+    html { font-size : 20px ; }
+    .container { max-width : 1600px ; }
+    .company-card { padding : 3rem ; }
+}
+
+
+
+/* ==========================================================================
+   SISTEMA DE NAVEGACIÓN DE REJILLA COMPACTA (19 DIVISIONES TÉCNICAS)
+   ========================================================================== */
+
+.category-grid-nav {
+    max-width : 1200px ;
+    margin : 40px auto ;
+    padding : 0 20px ;
+}
+
+.grid-nav-title {
+    font-size : clamp(1.2rem, 3vw, 1.5rem) ;
+    color : var(--color-primary) ;
+    border-left : 6px solid var(--accent-core) ;
+    background : linear-gradient(to right, var(--panel-bg), var(--bg-legend)) ;
+    padding : 1rem 1.2rem ;
+    border-radius : 0 10px 10px 0 ;
+    margin-bottom : 25px ;
+    font-weight : 800 ;
+}
+
+/* Contenedor Grid Inteligente Automático */
+.category-menu-wrapper {
+    display : grid ;
+    grid-template-columns : repeat(auto-fill, minmax(260px, 1fr)) ;
+    gap : 16px ;
+}
+
+/* Tarjeta de Marcador Individual */
+.category-grid-card {
+    background : var(--panel-bg) ;
+    border : 1px solid var(--border-ui) ;
+    border-radius : 12px ;
+    padding : 16px 20px ;
+    display : flex ;
+    align-items : center ;
+    gap : 12px ;
+    text-decoration : none !important ;
+    transition : var(--transition) ;
+    box-shadow : var(--shadow-sm) ;
+    position : relative ;
+    overflow : hidden ;
+}
+
+/* Elementos Internos de la Tarjeta */
+.cat-num-badge {
+    font-family : monospace ;
+    font-size : 0.85rem ;
+    font-weight : 800 ;
+    color : var(--text-meta) ;
+    background : var(--bg-legend) ;
+    padding : 2px 6px ;
+    border-radius : 4px ;
+    border : 1px solid var(--border-ui) ;
+}
+
+.cat-emoji-icon {
+    font-size : 1.35rem ;
+    line-height : 1 ;
+    transition : transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) ;
+}
+
+.cat-title-text {
+    color : var(--text-prime) !important ;
+    font-size : 0.9rem ;
+    font-weight : 700 ;
+    line-height : 1.3 ;
+}
+
+/* Comportamiento Dinámico al pasar el cursor (Hover Corporativo) */
+.category-grid-card:hover {
+    border-color : var(--accent-core) ;
+    transform : translateY(-4px) ;
+    box-shadow : var(--shadow-md) ;
+    background : linear-gradient(to bottom right, #ffffff, #f0f7ff) ;
+}
+
+.category-grid-card:hover .cat-emoji-icon {
+    transform : scale(1.25) rotate(5deg) ;
+}
+
+.category-grid-card:hover .cat-title-text {
+    color : var(--color-secondary) !important ;
+}
+
+.category-grid-card:hover .cat-num-badge {
+    background : var(--color-primary) ;
+    color : var(--color-white) ;
+    border-color : var(--color-primary) ;
+}
+
+/* ==========================================================================
+   ADAPTACIÓN REGLAMENTARIA: PROTOCOLO LUZ DE ENFOQUE (DARK-MODE ACTIVE)
+   ========================================================================== */
+
+body.dark-mode .category-grid-card {
+    background : #ffffff !important ;
+    border : 2px solid #000000 !important ;
+    box-shadow : 0 4px 10px rgba(0, 0, 0, 0.05) !important ;
+}
+
+body.dark-mode .category-grid-card:hover {
+    background : #f0f7ff !important ;
+    border-color : var(--color-secondary) !important ;
+    box-shadow : 0 8px 20px rgba(0, 0, 0, 0.15) !important ;
+}
+
+body.dark-mode .cat-title-text {
+    color : #000000 !important ;
+}
+
+body.dark-mode .category-grid-card:hover .cat-title-text {
+    color : var(--color-secondary) !important ;
+}
+
+body.dark-mode .cat-num-badge {
+    background : #ffffff ;
+    border-color : #000000 ;
+    color : #000000 ;
+}
+
+body.dark-mode .category-grid-card:hover .cat-num-badge {
+    background : #000000 ;
+    color : #ffffff ;
+    border-color : #000000 ;
+}
+
+
+/* ==========================================================================
+   COMPONENTE: BLOQUE DE IDENTIDAD INSTITUCIONAL (ALIANZA IA)
+   ========================================================================== */
+
+.section-special-alliance {
+    background : var(--panel-bg) ;
+    border : 1px solid var(--border-ui) ;
+    border-left : 8px solid var(--color-primary) ;
+    border-radius : 20px ;
+    padding : 40px ;
+    margin : 40px auto ;
+    max-width : 1200px ;
+    box-shadow : var(--shadow-md) ;
+}
+
+.alliance-header h2 {
+    color : var(--color-primary) ;
+    font-size : clamp(1.3rem, 4vw, 1.8rem) ;
+    font-weight : 800 ;
+    margin-bottom : 15px ;
+    display : flex ;
+    align-items : center ;
+    gap : 10px ;
+}
+
+.emoji-alliance {
+    font-size : 2rem ;
+}
+
+.alliance-director {
+    font-size : 1rem ;
+    color : var(--text-prime) ;
+    margin-bottom : 10px ;
+}
+
+.director-separator {
+    color : var(--accent-core) ;
+    font-weight : 800 ;
+    margin : 0 8px ;
+}
+
+.alliance-mission {
+    font-size : 0.95rem ;
+    color : var(--text-muted) ;
+    line-height : 1.6 ;
+}
+
+/* Sección de los 4 Pilares */
+.pillars-container-grid {
+    border-top : 1px dashed var(--border-ui) ;
+    margin-top : 30px ;
+    padding-top : 25px ;
+}
+
+.pillars-section-title {
+    font-size : 1rem ;
+    color : var(--color-primary) ;
+    text-transform : uppercase ;
+    letter-spacing : 0.5px ;
+    margin-bottom : 20px ;
+    font-weight : 800 ;
+}
+
+/* Faja Horizontal / Cuadrícula de Pilares */
+.pillars-wrapper {
+    display : grid ;
+    grid-template-columns : repeat(auto-fit, minmax(220px, 1fr)) ;
+    gap : 16px ;
+}
+
+/* Tarjeta del Pilar Individual */
+.pilar-card {
+    background : var(--bg-legend) ;
+    border : 1px solid var(--border-ui) ;
+    border-radius : 12px ;
+    padding : 16px 20px ;
+    display : flex ;
+    align-items : center ;
+    gap : 15px ;
+    transition : var(--transition) ;
+}
+
+.pilar-icon {
+    font-size : 1.8rem ;
+    line-height : 1 ;
+}
+
+.pilar-content h4 {
+    color : var(--color-primary) ;
+    font-size : 0.95rem ;
+    font-weight : 800 ;
+    margin : 0 ;
+}
+
+.pilar-content p {
+    color : var(--text-meta) ;
+    font-size : 0.85rem ;
+    margin : 2px 0 0 0 ;
+    font-weight : 600 ;
+}
+
+/* Efectos Interactivos (Hover) */
+.pilar-card:hover {
+    border-color : var(--accent-core) ;
+    transform : translateY(-3px) ;
+    box-shadow : var(--shadow-sm) ;
+    background : var(--panel-bg) ;
+}
+
+/* ==========================================================================
+   ADAPTACIÓN AL PROTOCOLO LUZ DE ENFOQUE (DARK-MODE ACTIVE)
+   ========================================================================== */
+
+body.dark-mode .section-special-alliance {
+    background : #ffffff !important ;
+    border : 3px solid #000000 !important ;
+    border-left : 10px solid #000000 !important ;
+}
+
+body.dark-mode .alliance-header h2 {
+    color : #000000 !important ;
+}
+
+body.dark-mode .alliance-director ,
+body.dark-mode .alliance-mission {
+    color : #000000 !important ;
+    font-weight : 700 !important ;
+}
+
+body.dark-mode .pillars-section-title {
+    color : var(--color-secondary) !important ;
+}
+
+body.dark-mode .pilar-card {
+    background : #ffffff !important ;
+    border : 2px solid #000000 !important ;
+}
+
+body.dark-mode .pilar-card:hover {
+    background : #f0f7ff !important ;
+    border-color : var(--color-secondary) !important ;
+}
+
+body.dark-mode .pilar-content h4 {
+    color : #000000 !important ;
+}
+
+body.dark-mode .pilar-content p {
+    color : var(--color-secondary) !important ;
+}
+
+
+
+/* ==========================================================================
+   COMPONENTE: CABECERA GERENCIAL Y BREADCRUMB INSTITUCIONAL
+   ========================================================================== */
+
+.main-header {
+    background : linear-gradient(135deg, #1a365d 0%, #2563eb 100%) ; /* Degradado tecnológico azul */
+    color : var(--color-white) ;
+    padding : 80px 20px ;
+    text-align : center ;
+    border-bottom : 6px solid var(--accent-core) ;
+    box-shadow : var(--shadow-md) ;
+    position : relative ;
+    overflow : hidden ;
+}
+
+/* Contenedor interno para asegurar la alineación de la lectura fácil */
+.header-overlay-container {
+    max-width : 1000px ;
+    margin : 0 auto ;
+    display : flex ;
+    flex-direction : column ;
+    align-items : center ;
+    gap : 15px ;
+}
+
+.header-main-title {
+    font-size : clamp(2.2rem, 6vw, 3.5rem) !important ;
+    font-weight : 800 !important ;
+    letter-spacing : -0.04em ;
+    color : var(--color-white) !important ;
+    margin : 0 !important ;
+    -webkit-text-fill-color : initial !important ; /* Sobrescribe gradientes previos */
+    background : none !important ;
+}
+
+.header-sub-title {
+    font-size : clamp(1.1rem, 3vw, 1.3rem) ;
+    font-weight : 600 ;
+    color : #e0f2fe ; /* Azul claro de alta legibilidad académica */
+    max-width : 800px ;
+    line-height : 1.5 ;
+    margin : 0 ;
+}
+
+/* Faja de Valores Operativos Mejorada */
+.slogan-value-bar {
+    display : flex ;
+    align-items : center ;
+    justify-content : center ;
+    flex-wrap : wrap ;
+    gap : 10px ;
+    margin-top : 10px ;
+    background : rgba(255, 255, 255, 0.1) ;
+    padding : 10px 24px ;
+    border-radius : 50px ;
+    border : 1px solid rgba(255, 255, 255, 0.15) ;
+    backdrop-filter : blur(4px) ;
+}
+
+.value-pill {
+    font-size : 0.9rem ;
+    font-weight : 800 ;
+    text-transform : uppercase ;
+    letter-spacing : 1px ;
+    color : var(--color-white) ;
+}
+
+.value-dot {
+    color : var(--accent-core) ;
+    font-size : 1.2rem ;
+}
+
+.header-meta-version {
+    font-size : 0.75rem ;
+    text-transform : uppercase ;
+    letter-spacing : 2px ;
+    color : rgba(255, 255, 255, 0.6) ;
+    font-weight : 700 ;
+    margin-top : 5px ;
+}
+
+/* Corrección y Ajuste Técnico de los BreadcrumbsExistentes */
+.breadcrumb-nav {
+    max-width : 1200px ;
+    margin : 25px auto ;
+    padding : 0 20px ;
+}
+
+.breadcrumb-cluster {
+    display : flex ;
+    align-items : center ;
+    gap : 8px ;
+    flex-wrap : wrap ;
+}
+
+.breadcrumb-separator {
+    color : var(--text-meta) ;
+    font-size : 1.2rem ;
+    font-weight : bold ;
+}
+

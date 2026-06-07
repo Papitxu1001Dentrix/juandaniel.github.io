@@ -1,0 +1,820 @@
+/* ==========================================================================
+   CSS.CSS — DENTRIX 1.0 MAXIMA PRODUCCIÓN (FUSIÓN INTEGRAL 2026)
+   --------------------------------------------------------------------------
+   - Optimización: Multi-dispositivo (Ayer, Hoy, Mañana) & Ultra-Rendimiento
+   - Proyecto: Salud con Nutrición — Directorio Gerencial (Amigos Web / Amigas Web)
+   - Ubicación Servidor: https://www.saludconnutricion.com/AmigosWebAmigas/css.css
+   - Diseño: Limpio, Profesional, Tecnológico, Fotográfico y Accesible
+   ========================================================================== */
+
+:root {
+    /* Paleta de Identidad Profesional y Corporativa */
+    --bg-main: #fcfdfe;
+    --panel-bg: #ffffff;
+    --color-primary: #1A365D; 
+    --color-secondary: #2563EB;
+    --color-accent: #3B82F6;
+    --accent-core: #5dade2;
+    --accent-hover: #3498db;
+    --azul-profesional: #455a64;
+    --text-prime: #2c3e50;
+    --text-text: #000000;
+    --text-meta: #7f8c8d;
+    --text-muted: #64748b;
+    --border-ui: #e2e8f0;
+    --glass-border: rgba(226, 232, 240, 0.8);
+    --color-white: #FFFFFF;
+    --bg-legend: #f8fafc;
+    
+    /* Sistema de Sombras y Efectos de Profundidad */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px -2px rgba(0,0,0,0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1);
+    --shadow-neo: 10px 10px 20px #d1d9e6, -10px -10px 20px #ffffff;
+    
+    /* Dinámicas de Movimiento y Transición */
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 1. RESET Y ESTILOS GLOBALES BASE */
+* { 
+    box-sizing: border-box; 
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+    margin: 0; 
+    padding: 0;
+}
+
+html { 
+    scroll-behavior: smooth; 
+    font-size: 16px; 
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--bg-main);
+    color: var(--text-prime);
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding-bottom: 120px !important; /* Espacio de seguridad para dock / ia-mariposa */
+}
+
+/* 2. MAQUETACIÓN, CONTENEDORES Y ESTRUCTURAS */
+.container { 
+    width: 92%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px 0;
+}
+
+.company-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: clamp(1.2rem, 4vw, 2rem);
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-neo);
+}
+
+/* 3. ARQUITECTURA DE CABECERA GERENCIAL */
+.main-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    color: var(--azul-profesional);
+    padding: 100px 20px;
+    text-align: center;
+    border-bottom: 6px solid var(--accent-core);
+    box-shadow: var(--shadow-sm);
+}
+
+.main-header h1 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--azul-profesional);
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.badge-institutional {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(93, 173, 226, 0.15);
+    border: 1px solid var(--accent-core);
+    color: var(--color-secondary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.slogan {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.header-meta {
+    font-size: 0.9rem;
+    color: var(--accent-core);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 15px;
+}
+
+/* 4. TIPOGRAFÍA, ENCABEZADOS Y ELEMENTOS DE TEXTO */
+h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 800;
+    text-align: center;
+    margin: 2.5rem 0;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2.categoria-titulo {
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    color: var(--color-primary);
+    border-left: 6px solid var(--color-secondary);
+    background: linear-gradient(to right, var(--panel-bg), var(--bg-legend));
+    padding: 1rem 1.2rem;
+    border-radius: 0 10px 10px 0;
+    margin: 2rem 0 1.2rem 0;
+}
+
+a {
+    color: var(--color-secondary) !important;
+    text-decoration: underline;
+    font-weight: 600;
+    word-break: break-all;
+}
+
+a:hover {
+    color: var(--accent-hover) !important;
+}
+
+/* 5. NAVEGACIÓN TÉCNICA (SISTEMA DE ENLACES Y MARCADORES) */
+.category-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 50px 40px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.category-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-ui);
+    padding: 25px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--text-prime);
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.category-card:hover { 
+    border-color: var(--accent-core); 
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-md);
+    color: var(--accent-hover);
+}
+
+.cat-id, .cat-num {
+    color: var(--accent-core);
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+/* 6. LISTAS Y COMPONENTES DE INTERFAZ (BADGES / PILLS) */
+ul {
+    padding-left: 1.5rem;
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 1rem;
+    position: relative;
+    color: var(--text-text);
+}
+
+ul li::before {
+    content: "●";
+    color: var(--color-secondary);
+    font-size: 0.8rem;
+    position: absolute;
+    left: -1.2rem;
+    top: 0.1rem;
+}
+
+.badge-amigo {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.tag-pill, .tag-item {
+    background: var(--bg-legend);
+    color: var(--text-prime);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: 1px solid var(--border-ui);
+}
+
+.auto-tags, .auto-tags-container {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+/* 7. SECCIONES, FICHAS DE ACTIVOS Y ANIMACIONES CONTENIDO */
+.categoria-seccion { 
+    padding: 50px 20px; 
+    max-width: 1150px; 
+    margin: auto; 
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.categoria-seccion:target {
+    animation: highlightSection 2s ease-out;
+    border-left-color: #f39c12; 
+}
+
+@keyframes highlightSection {
+    0% { background-color: rgba(243, 156, 18, 0.05); }
+    100% { background-color: transparent; }
+}
+
+.objetivo-box {
+    background: var(--bg-legend);
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--text-meta);
+    color: var(--text-prime);
+}
+
+.ficha-web {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-ui);
+    padding: 35px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.ficha-web::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: var(--accent-core);
+    opacity: 0; 
+    transition: 0.3s;
+}
+
+.ficha-web:hover::before { 
+    opacity: 1; 
+}
+
+.ficha-web:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-core);
+}
+
+.ficha-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--color-primary);
+}
+
+.web-description {
+    font-size: 1rem;
+    color: var(--text-text);
+    margin-bottom: 15px;
+}
+
+.ficha-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.9rem;
+    align-items: center;
+    border-top: 1px solid var(--border-ui);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.url-link {
+    color: var(--text-meta);
+    font-family: monospace;
+}
+
+.status-restriction-notice {
+    color: var(--text-meta);
+    font-size: 0.85rem;
+}
+
+.section-special {
+    padding: 40px;
+    background: var(--panel-bg);
+    border-radius: 20px;
+    border-left: 8px solid var(--accent-core);
+    margin-bottom: 50px;
+    box-shadow: var(--shadow-md);
+}
+
+.section-special h2 {
+    color: var(--text-prime);
+    font-size: 1.7rem;
+    margin-top: 0;
+    font-weight: 700;
+}
+
+.future-projection-box {
+    background: linear-gradient(to right, #f0f7ff, var(--panel-bg));
+    border: 1px dashed var(--accent-core);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 40px 0;
+    color: #2c5282;
+}
+
+/* 8. MULTIMEDIA, CONTROLES DE IMAGEN (1400x600) Y BREADCRUMBS */
+.hero-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1400 / 600;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 2rem 0 3.5rem 0;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    display: block;
+}
+
+.breadcrumb-nav {
+    max-width: 1150px;
+    margin: 30px auto;
+    padding: 0 40px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-cluster {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.breadcrumb-separator {
+    color: var(--text-meta);
+}
+
+.btn-breadcrumb {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-ui);
+    padding: 12px 24px;
+    border-radius: 60px;
+    color: var(--text-prime);
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-breadcrumb:hover {
+    background: #f0f7ff;
+    border-color: var(--accent-core);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.current-page {
+    background: var(--bg-legend);
+    border-color: var(--border-ui);
+    cursor: default;
+}
+
+.lang-selector {
+    display: flex;
+    gap: 8px;
+    margin-left: auto; 
+    align-items: center;
+}
+
+.lang-label {
+    font-size: 0.85rem;
+    color: var(--text-meta);
+    font-weight: 600;
+}
+
+.btn-lang {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-ui);
+    padding: 6px 14px;
+    border-radius: 60px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-prime);
+}
+
+.btn-lang:hover { 
+    border-color: var(--accent-core); 
+    background: #f0f7ff; 
+}
+
+/* 9. PROTOCOLO INTERACTIVO Y EMOJIS SIN CONTENEDORES INFANTILES */
+.legend-institutional-section {
+    background-color: var(--bg-legend);
+    border: 1px solid var(--border-ui);
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 1150px;
+}
+
+.legend-title {
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.grid-legend-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.legend-item-card {
+    font-size: 0.9rem;
+    color: var(--text-prime);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+/* Remoción de fondos estridentes en iconos */
+.icon-pure, .emoji-static, .emoji-scroll-container .e-tip {
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    font-size: 1.4rem;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.e-tip:hover { 
+    transform: scale(1.4) translateY(-3px); 
+}
+
+/* Enlaces de presentación interactivos */
+.friend-presentation-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    vertical-align: middle;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #f0f7ff;
+    border-radius: 50px;
+    color: var(--accent-hover) !important;
+    font-weight: 700;
+    transition: var(--transition);
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.friend-presentation-link:hover { 
+    background: var(--accent-core); 
+    color: white !important; 
+}
+
+.emoji-animado {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-right: 10px;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.friend-presentation-link:hover .emoji-animado {
+    transform: scale(1.6) rotate(10deg);
+}
+
+/* PROTOCOLO EMOJI ANIMADO (MAGIA DE INTERACCIÓN) */
+.friend-presentation-link {
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: middle;
+    margin-left: 12px;
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.emoji-animado {
+    display: inline-block;
+    font-size: 1.6rem;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.friend-presentation-link:hover .emoji-animado {
+    transform: scale(1.8) rotate(10deg);
+}
+
+/* Secuencia de Ojos y Guiño mediante Pseudo-elemento */
+.friend-presentation-link:hover .emoji-animado::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "😊";
+    animation: secuenciaEmoji 2.5s steps(1) infinite;
+}
+
+@keyframes secuenciaEmoji {
+    0%   { content: "😊"; } 
+    20%  { content: "😮"; } 
+    40%  { content: "😌"; } 
+    60%  { content: "😉"; } 
+    80%  { content: "😊"; }
+}
+
+}
+
+/* 10. SERVICIOS PROPIOS DE APIS (BUSCADOR INTELECTUAL, ESCUDOS, FOOTER) */
+.control-dashboard-panel {
+    max-width: 1150px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.search-container { 
+    max-width: 100%; 
+    margin: 15px 0; 
+}
+
+.search-engine-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-search-group {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--border-ui);
+    border-radius: 50px;
+    background: var(--panel-bg);
+    padding-left: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.input-search-group:focus-within {
+    border-color: var(--accent-core);
+    box-shadow: 0 0 0 4px rgba(93, 173, 226, 0.15);
+}
+
+#webSearch {
+    flex: 1;
+    border: none;
+    padding: 15px 20px; 
+    font-size: 1rem;
+    outline: none;
+    background: transparent;
+    color: var(--text-prime);
+}
+
+.btn-search-execute {
+    background: var(--accent-core);
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.btn-search-execute:hover {
+    background: var(--accent-hover);
+}
+
+.search-tip-text {
+    font-size: 0.85rem;
+    color: var(--text-meta);
+    font-style: italic;
+    padding-left: 20px;
+}
+
+.safety-shield {
+    font-size: 1.1rem;
+    margin-left: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.shield-verified, .shield-secure { 
+    color: #2ecc71; 
+    filter: drop-shadow(0 0 2px rgba(46, 204, 113, 0.4)); 
+}
+
+.shield-checking { 
+    color: var(--text-meta); 
+    opacity: 0.6; 
+    animation: pulse 1.5s infinite; 
+}
+
+.shield-warning { 
+    color: #e74c3c; 
+}
+
+@keyframes pulse { 
+    0% { opacity: 0.4; } 
+    50% { opacity: 1; } 
+    100% { opacity: 0.4; } 
+}
+
+.stats-bar {
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 12px 24px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 1px solid #bae6fd;
+}
+
+.footer-pro {
+    background: var(--bg-legend);
+    color: var(--text-prime);
+    padding: 80px 40px;
+    margin-top: 100px;
+    border-top: 1px solid var(--border-ui);
+}
+
+.footer-final-text {
+    text-align: center;
+    border-top: 1px solid var(--border-ui);
+    padding-top: 50px;
+    font-size: 0.95rem;
+    color: var(--text-meta);
+}
+
+/* 11. SISTEMAS ADICIONALES (KAKAROTA ENGINE & MODO NOCHE) */
+#ia-butterfly-container { 
+    transition: all 4s ease-in-out !important; 
+}
+
+#kakarota-chat-bubble { 
+    backdrop-filter: blur(15px); 
+}
+
+/* CORRECCIÓN INTEGRAL DE CONTRASTE EN MODO OSCURO (NIGHT PROTOCOL) */
+body.dark-mode {
+    --bg-main: #0f172a;       
+    --panel-bg: #1e293b;      
+    --text-prime: #f1f5f9;    
+    --text-text: #ffffff; /* Corrección crítica: Evita mimetismo de fuentes negras en fondo oscuro */
+    --text-meta: #94a3b8;
+    --border-ui: #334155;
+    --azul-profesional: #38bdf8;
+    --bg-legend: #0f172a;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.2);
+    --glass-border: rgba(51, 65, 85, 0.8);
+}
+
+body.dark-mode .main-header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-bottom-color: var(--color-secondary);
+}
+
+body.dark-mode .stats-bar {
+    background: #0c4a6e; 
+    color: #bae6fd; 
+    border-color: #075985;
+}
+
+body.dark-mode .friend-presentation-link {
+    background: #1e293b;
+    border: 1px solid var(--border-ui);
+}
+
+.dark-toggle {
+    position: fixed; 
+    bottom: 30px; 
+    right: 30px;
+    background: var(--azul-profesional); 
+    color: white;
+    border: none; 
+    border-radius: 50%; 
+    width: 55px; 
+    height: 55px;
+    cursor: pointer; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+    z-index: 1000;
+    font-size: 1.5rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-toggle:hover { 
+    transform: scale(1.1); 
+}
+
+/* 12. RESPONSIVIDAD ADAPTATIVA MULTI-DISPOSITIVO */
+
+/* Dispositivos del Ayer (Móviles / Pantallas Pequeñas) */
+@media (max-width: 480px) {
+    html { font-size: 14px; }
+    .container { width: 94%; }
+    .hero-image { border-radius: 12px; margin-bottom: 2rem; }
+    h1 { margin: 1.5rem 0; }
+    .breadcrumb-nav, .category-menu, .categoria-seccion, .legend-institutional-section, .control-dashboard-panel {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .input-search-group {
+        flex-direction: column;
+        border-radius: 20px;
+        padding-left: 0;
+    }
+    #webSearch {
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+    }
+    .btn-search-execute {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+/* Tablets e Interfaces Híbridas (Hoy) */
+@media (max-width: 768px) {
+    .category-menu { grid-template-columns: 1fr; padding: 20px; }
+    .main-header h1 { font-size: 2rem; }
+    .main-header { padding: 60px 15px; }
+    .ficha-web { padding: 20px; }
+    .hero-image { aspect-ratio: 16 / 9; }
+    .friend-presentation-link:hover .emoji-animado { transform: scale(1.4); } 
+    .lang-selector { margin-left: 0; width: 100%; justify-content: center; margin-top: 10px; }
+}
+
+/* Pantallas de Gran Formato y del Mañana (4K / UltraWide) */
+@media (min-width: 2100px) {
+    html { font-size: 20px; }
+    .container { max-width: 1600px; }
+    .company-card { padding: 3rem; }
+}

@@ -1,0 +1,332 @@
+/* [ ARCHIVO : css.css ] - PROTOCOLO AMIGOS WEB 2026 - LUMINOSO V5.1 (MAGIA DINÁMICA & RIGOR) */
+
+:root {
+    --bg-main: #fcfdfe;            
+    --panel-bg: #ffffff;           
+    --accent-core: #5dade2;        
+    --accent-hover: #3498db;       
+    --azul-profesional: #455a64;   
+    --text-prime: #2c3e50;         
+    --text-meta: #7f8c8d;          
+    --border-ui: #e2e8f0;          
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
+    --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px -2px rgba(0,0,0,0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1);
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--bg-main);
+    color: var(--text-prime);
+    margin: 0;
+    line-height: 1.7;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ESTRUCTURA DE CABECERA */
+.main-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    color: var(--azul-profesional);
+    padding: 100px 20px;
+    text-align: center;
+    border-bottom: 6px solid var(--accent-core);
+    box-shadow: var(--shadow-sm);
+}
+
+.main-header h1 {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+/* NAVEGACIÓN TÉCNICA */
+.category-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 50px 40px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.category-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-ui);
+    padding: 25px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--text-prime);
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+}
+
+.category-card:hover { 
+    border-color: var(--accent-core); 
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-md);
+    color: var(--accent-hover);
+}
+
+/* SECCIONES DE CONTENIDO */
+.categoria-seccion { 
+    padding: 50px 20px; 
+    max-width: 1150px; 
+    margin: auto; 
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ficha-web {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-ui);
+    padding: 35px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.ficha-web:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-core);
+}
+
+/* PROTOCOLO EMOJI ANIMADO (MAGIA DE INTERACCIÓN) */
+.friend-presentation-link {
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: middle;
+    margin-left: 12px;
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.emoji-animado {
+    display: inline-block;
+    font-size: 1.6rem;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.friend-presentation-link:hover .emoji-animado {
+    transform: scale(1.8) rotate(10deg);
+}
+
+/* Secuencia de Ojos y Guiño mediante Pseudo-elemento */
+.friend-presentation-link:hover .emoji-animado::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "😊";
+    animation: secuenciaEmoji 2.5s steps(1) infinite;
+}
+
+@keyframes secuenciaEmoji {
+    0%   { content: "😊"; } 
+    20%  { content: "😮"; } 
+    40%  { content: "😌"; } 
+    60%  { content: "😉"; } 
+    80%  { content: "😊"; }
+}
+
+/* SECCIONES ESPECIALES */
+.section-special {
+    padding: 40px;
+    background: var(--panel-bg);
+    border-radius: 20px;
+    border-left: 8px solid var(--accent-core);
+    margin-bottom: 50px;
+    box-shadow: var(--shadow-md);
+}
+
+.future-projection-box {
+    background: linear-gradient(to right, #f0f7ff, var(--panel-bg));
+    border: 1px dashed var(--accent-core);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 40px 0;
+    color: #2c5282;
+}
+
+/* BREADCRUMBS */
+.breadcrumb-nav {
+    max-width: 1150px;
+    margin: 30px auto;
+    padding: 0 40px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-breadcrumb {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-ui);
+    padding: 12px 24px;
+    border-radius: 60px;
+    color: var(--azul-profesional);
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-breadcrumb:hover {
+    background: #f0f7ff;
+    border-color: var(--accent-core);
+    transform: translateY(-3px);
+}
+
+/* FOOTER */
+.footer-pro {
+    background: #f8fafc;
+    color: var(--text-prime);
+    padding: 80px 40px;
+    margin-top: 100px;
+    border-top: 1px solid var(--border-ui);
+}
+
+/* ADAPTABILIDAD */
+@media (max-width: 768px) {
+    .category-menu { grid-template-columns: 1fr; }
+    .main-header h1 { font-size: 2.1rem; }
+    .friend-presentation-link:hover .emoji-animado { transform: scale(1.4); }
+}
+
+/* =========================================================
+   PROPIEDADES DE SERVICIOS ADICIONALES - PROTOCOLO 2026
+   ========================================================= */
+
+.search-container { max-width: 1100px; margin: 20px auto; padding: 0 40px; }
+#webSearch {
+    width: 100%; padding: 15px 25px; border-radius: 50px;
+    border: 2px solid var(--border-ui); font-size: 1rem;
+    transition: var(--transition); outline: none;
+    background: var(--panel-bg); color: var(--text-prime);
+}
+
+/* MODO NOCHE REFORZADO */
+body.dark-mode {
+    --bg-main: #0f172a;       
+    --panel-bg: #1e293b;      
+    --text-prime: #f1f5f9;    
+    --text-meta: #94a3b8;
+    --border-ui: #334155;
+    --azul-profesional: #38bdf8;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .main-header {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.dark-toggle {
+    position: fixed; bottom: 30px; right: 30px;
+    background: var(--azul-profesional); color: white;
+    border: none; border-radius: 50%; width: 55px; height: 55px;
+    cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000;
+    font-size: 1.5rem; transition: var(--transition);
+}
+
+.stats-bar {
+    background: #e0f2fe; color: #0369a1;
+    padding: 10px 20px; border-radius: 8px;
+    display: inline-block; margin-top: 20px;
+    font-weight: 700; font-size: 0.9rem; border: 1px solid #bae6fd;
+}
+
+body.dark-mode .stats-bar {
+    background: #0c4a6e; color: #bae6fd; border-color: #075985;
+}
+
+
+/* Escudo de seguridad dinámico */
+.safety-shield {
+    font-size: 0.9rem;
+    margin-left: 8px;
+    cursor: help;
+    transition: var(--transition);
+}
+.shield-secure { color: #2ecc71; } /* Verde: Seguro */
+.shield-warning { color: #e74c3c; } /* Rojo: Riesgo */
+
+
+
+
+.auto-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+.tag-item {
+    background: #f1f5f9;
+    color: var(--azul-profesional);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 1px solid var(--border-ui);
+}
+
+
+
+/* =========================================================
+   APIS EXTERNAS: DISEÑO DE SEGURIDAD, ETIQUETAS E IDIOMAS
+   ========================================================= */
+
+/* 1. SEGURIDAD: Escudo de Google Safe Browsing */
+.safety-shield {
+    font-size: 0.85rem;
+    margin-left: 10px;
+    vertical-align: middle;
+    transition: var(--transition);
+}
+.shield-verified { color: #2ecc71; filter: drop-shadow(0 0 2px rgba(46, 204, 113, 0.4)); }
+.shield-checking { color: var(--text-meta); opacity: 0.6; }
+
+/* 2. ETIQUETAS: Azure AI Key Phrases */
+.auto-tags-container {
+    display: flex;
+    gap: 6px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+.tag-pill {
+    background: #f1f5f9;
+    color: var(--azul-profesional);
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid var(--border-ui);
+}
+
+/* 3. TRADUCCIÓN: Selector de Idiomas en Breadcrumbs */
+.lang-selector {
+    display: flex;
+    gap: 8px;
+    margin-left: auto; /* Se alinea a la derecha en breadcrumbs */
+}
+.btn-lang {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-ui);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.btn-lang:hover { border-color: var(--accent-core); background: #f0f7ff; }
